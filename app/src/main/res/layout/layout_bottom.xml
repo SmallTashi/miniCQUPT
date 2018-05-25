@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/bg_color"
+    android:layout_height="match_parent">
+<include layout="@layout/layout_top_title"/>
+    <RadioGroup
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+<LinearLayout
+    android:weightSum="4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RadioButton
+        android:gravity="center"
+        android:layout_weight="1"
+        android:id="@+id/bottom_find"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawablePadding="5dp"
+        android:drawableTop="@drawable/bottom_course_sel_unsel"
+        android:padding="5dp"
+        android:text="@string/course_time_table" />
+
+    <RadioButton
+        android:gravity="center"
+
+        android:layout_weight="1"
+        android:id="@+id/bottom_question"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableTop="@drawable/bottom_question_sel_unsel"
+        android:padding="5dp"
+        android:button="@null"
+
+        android:text="@string/bottom_question" />
+    <RadioButton
+        android:gravity="center"
+
+        android:layout_weight="1"
+        android:id="@+id/bottom_mine"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawablePadding="5dp"
+        android:drawableTop="@drawable/bottom_community_sel_unsel"
+        android:padding="5dp"
+        android:text="@string/bottom_community" />
+
+    <RadioButton
+        android:gravity="center"
+
+        android:button="@null"
+        android:layout_weight="1"
+        android:id="@+id/bottom_time_table"
+        android:layout_width="0dp"
+        android:padding="5dp"
+        android:drawablePadding="5dp"
+        android:layout_height="wrap_content"
+        android:drawableTop="@drawable/bottom_mine_sel_unsel"
+        android:text="@string/bottom_mine" />
+</LinearLayout>
+
+    </RadioGroup>
+
+
+</RelativeLayout>
