@@ -1,4 +1,7 @@
-package com.smarttahi.cquptinhand.Data;
+package com.smarttahi.minicqupt.Data;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import java.util.List;
 
@@ -37,7 +40,7 @@ public class CommentList {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Parcelable {
         /**
          * content : 测试
          * created_at : 2018-02-24 01:45:56
@@ -91,5 +94,42 @@ public class CommentList {
         public void setGender(String gender) {
             this.gender = gender;
         }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(this.content);
+            dest.writeString(this.created_at);
+            dest.writeString(this.nickname);
+            dest.writeString(this.photo_thumbnail_src);
+            dest.writeString(this.gender);
+        }
+
+        public DataBean() {
+        }
+
+         DataBean(Parcel in) {
+            this.content = in.readString();
+            this.created_at = in.readString();
+            this.nickname = in.readString();
+            this.photo_thumbnail_src = in.readString();
+            this.gender = in.readString();
+        }
+
+        public static final Parcelable.Creator<DataBean> CREATOR = new Parcelable.Creator<DataBean>() {
+            @Override
+            public DataBean createFromParcel(Parcel source) {
+                return new DataBean(source);
+            }
+
+            @Override
+            public DataBean[] newArray(int size) {
+                return new DataBean[size];
+            }
+        };
     }
 }

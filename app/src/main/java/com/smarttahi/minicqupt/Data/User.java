@@ -1,41 +1,17 @@
-package com.smarttahi.cquptinhand.Data;
+package com.smarttahi.minicqupt.Data;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 public class User {
+
     /**
      * status : 200
      * info : success
-     * state : 200
-     * data : {"id":2828,"stunum":"2016210xxx","introduction":"An Android Developer","username":"李吉","nickname":"Jay","gender":"男","photo_thumbnail_src":"http://wx.idsbllp.cn/cyxbsMobile/Public/photo/thumbnail/1520430636_1133226083.png","photo_src":"http://wx.idsbllp.cn/cyxbsMobile/Public/photo/1520430636_1133226083.png","updated_time":"2018-05-05 23:15:35","phone":"159235xxxxx","qq":"14325xxxxx"}
+     * data : {"stuNum":"2016210xxx","name":"李吉","college":"通信与信息工程学院","class":"01041602班","classNum":"01041602","gender":"男","major":"0104","grade":"2016","idNum":"xxxxx"}
      */
 
-    private int status;
-    private String info;
-    private int state;
     private DataBean data;
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public int getState() {
-        return state;
-    }
-
-    public void setState(int state) {
-        this.state = state;
-    }
 
     public DataBean getData() {
         return data;
@@ -45,71 +21,67 @@ public class User {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Parcelable {
         /**
-         * id : 2828
-         * stunum : 2016210xxx
-         * introduction : An Android Developer
-         * username : 李吉
-         * nickname : Jay
+         * stuNum : 2016210xxx
+         * name : 李吉
+         * college : 通信与信息工程学院
+         * class : 01041602班
+         * classNum : 01041602
          * gender : 男
-         * photo_thumbnail_src : http://wx.idsbllp.cn/cyxbsMobile/Public/photo/thumbnail/1520430636_1133226083.png
-         * photo_src : http://wx.idsbllp.cn/cyxbsMobile/Public/photo/1520430636_1133226083.png
-         * updated_time : 2018-05-05 23:15:35
-         * phone : 159235xxxxx
-         * qq : 14325xxxxx
+         * major : 0104
+         * grade : 2016
+         * idNum : xxxxx
          */
 
-        private int id;
-        private String stunum;
-        private String introduction;
-        private String username;
-        private String nickname;
+        private String stuNum;
+        private String name;
+        private String college;
+        private String classX;
+        private String classNum;
         private String gender;
-        private String photo_thumbnail_src;
-        private String photo_src;
-        private String updated_time;
-        private String phone;
-        private String qq;
+        private String major;
+        private String grade;
+        private String idNum;
 
-        public int getId() {
-            return id;
+        public String getStuNum() {
+            return stuNum;
         }
 
-        public void setId(int id) {
-            this.id = id;
+        public void setStuNum(String stuNum) {
+            this.stuNum = stuNum;
         }
 
-        public String getStunum() {
-            return stunum;
+        public String getName() {
+            return name;
         }
 
-        public void setStunum(String stunum) {
-            this.stunum = stunum;
+        public void setName(String name) {
+            this.name = name;
         }
 
-        public String getIntroduction() {
-            return introduction;
+        public String getCollege() {
+            return college;
         }
 
-        public void setIntroduction(String introduction) {
-            this.introduction = introduction;
+        public void setCollege(String college) {
+            this.college = college;
         }
 
-        public String getUsername() {
-            return username;
+        public String getClassX() {
+            return classX;
         }
 
-        public void setUsername(String username) {
-            this.username = username;
+        public void setClassX(String classX) {
+            this.classX = classX;
         }
 
-        public String getNickname() {
-            return nickname;
+        public String getClassNum() {
+            return classNum;
         }
 
-        public void setNickname(String nickname) {
-            this.nickname = nickname;
+        public void setClassNum(String classNum) {
+            this.classNum = classNum;
         }
 
         public String getGender() {
@@ -120,44 +92,76 @@ public class User {
             this.gender = gender;
         }
 
-        public String getPhoto_thumbnail_src() {
-            return photo_thumbnail_src;
+        public String getMajor() {
+            return major;
         }
 
-        public void setPhoto_thumbnail_src(String photo_thumbnail_src) {
-            this.photo_thumbnail_src = photo_thumbnail_src;
+        public void setMajor(String major) {
+            this.major = major;
         }
 
-        public String getPhoto_src() {
-            return photo_src;
+        public String getGrade() {
+            return grade;
         }
 
-        public void setPhoto_src(String photo_src) {
-            this.photo_src = photo_src;
+        public void setGrade(String grade) {
+            this.grade = grade;
         }
 
-        public String getUpdated_time() {
-            return updated_time;
+        public String getIdNum() {
+            return idNum;
         }
 
-        public void setUpdated_time(String updated_time) {
-            this.updated_time = updated_time;
+        public void setIdNum(String idNum) {
+            this.idNum = idNum;
         }
 
-        public String getPhone() {
-            return phone;
+        @Override
+        public int describeContents() {
+            return 0;
         }
 
-        public void setPhone(String phone) {
-            this.phone = phone;
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeString(this.stuNum);
+            dest.writeString(this.name);
+            dest.writeString(this.college);
+            dest.writeString(this.classX);
+            dest.writeString(this.classNum);
+            dest.writeString(this.gender);
+            dest.writeString(this.major);
+            dest.writeString(this.grade);
+            dest.writeString(this.idNum);
         }
 
-        public String getQq() {
-            return qq;
+        public DataBean() {
         }
 
-        public void setQq(String qq) {
-            this.qq = qq;
+        DataBean(Parcel in) {
+            this.stuNum = in.readString();
+            this.name = in.readString();
+            this.college = in.readString();
+            this.classX = in.readString();
+            this.classNum = in.readString();
+            this.gender = in.readString();
+            this.major = in.readString();
+            this.grade = in.readString();
+            this.idNum = in.readString();
         }
+
+        public static final Parcelable.Creator<DataBean> CREATOR = new Parcelable.Creator<DataBean>() {
+            @Override
+            public DataBean createFromParcel(Parcel source) {
+                return new DataBean(source);
+            }
+
+            @Override
+            public DataBean[] newArray(int size) {
+                return new DataBean[size];
+            }
+        };
     }
+
+
+
 }

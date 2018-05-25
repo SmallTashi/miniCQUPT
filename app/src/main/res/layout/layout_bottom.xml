@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 <include layout="@layout/layout_top_title"/>
     <RadioGroup
+        android:id="@+id/bottom_group"
         android:background="@color/white"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"

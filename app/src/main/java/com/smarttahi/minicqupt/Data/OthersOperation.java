@@ -1,4 +1,4 @@
-package com.smarttahi.cquptinhand.Data;
+package com.smarttahi.minicqupt.Data;
 
 public class OthersOperation {
    class AnswerQuestion{

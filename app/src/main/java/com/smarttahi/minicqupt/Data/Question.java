@@ -1,5 +1,9 @@
-package com.smarttahi.cquptinhand.Data;
+package com.smarttahi.minicqupt.Data;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Question {
@@ -37,7 +41,7 @@ public class Question {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Parcelable {
         /**
          * is_self : 0
          * title : 这个代码太难写了\\ue056
@@ -150,7 +154,7 @@ public class Question {
             return photo_urls;
         }
 
-        public void setPhoto_urls(List<?> photo_urls) {
+        public void setPhoto_urls(List<String> photo_urls) {
             this.photo_urls = photo_urls;
         }
 
@@ -277,5 +281,58 @@ public class Question {
                 this.photo_url = photo_url;
             }
         }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeInt(this.is_self);
+            dest.writeString(this.title);
+            dest.writeString(this.description);
+            dest.writeString(this.reward);
+            dest.writeString(this.disappear_at);
+            dest.writeString(this.tags);
+            dest.writeString(this.kind);
+            dest.writeString(this.questioner_nickname);
+            dest.writeString(this.questioner_photo_thumbnail_src);
+            dest.writeString(this.questioner_gender);
+            dest.writeList(this.photo_urls);
+            dest.writeList(this.answers);
+        }
+
+        public DataBean() {
+        }
+
+        protected DataBean(Parcel in) {
+            this.is_self = in.readInt();
+            this.title = in.readString();
+            this.description = in.readString();
+            this.reward = in.readString();
+            this.disappear_at = in.readString();
+            this.tags = in.readString();
+            this.kind = in.readString();
+            this.questioner_nickname = in.readString();
+            this.questioner_photo_thumbnail_src = in.readString();
+            this.questioner_gender = in.readString();
+            this.photo_urls = new ArrayList<String>();
+            in.readList(this.photo_urls,String.class.getClassLoader());
+            this.answers = new ArrayList<AnswersBean>();
+            in.readList(this.answers, AnswersBean.class.getClassLoader());
+        }
+
+        public static final Parcelable.Creator<DataBean> CREATOR = new Parcelable.Creator<DataBean>() {
+            @Override
+            public DataBean createFromParcel(Parcel source) {
+                return new DataBean(source);
+            }
+
+            @Override
+            public DataBean[] newArray(int size) {
+                return new DataBean[size];
+            }
+        };
     }
 }

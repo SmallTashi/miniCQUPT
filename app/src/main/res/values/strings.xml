@@ -10,4 +10,13 @@
     <string name="bottom_community">社 区</string>
     <string name="bottom_question">邮 问</string>
     <string name="bottom_mine">我 的</string>
+    <string name="course_name">课程名称</string>
+    <string name="course_teacher">授课教师</string>
+    <string name="course_time">时间（星期一：1—4节
+        8：00下课）</string>
+    <string name="course_location">教室</string>
+    <string name="course_type">类型</string>
+    <string name="course_week">周数（1—9周，11—13周）</string>
+
+
 </resources>

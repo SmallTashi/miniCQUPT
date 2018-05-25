@@ -1,4 +1,4 @@
-package com.smarttahi.cquptinhand.tools;
+package com.smarttahi.minicqupt.tools;
 
 public class JSONmanager {
 

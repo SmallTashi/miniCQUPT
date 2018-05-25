@@ -1,4 +1,4 @@
-package com.smarttahi.cquptinhand.tools;
+package com.smarttahi.minicqupt.tools;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
