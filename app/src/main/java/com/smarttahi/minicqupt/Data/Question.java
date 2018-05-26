@@ -3,336 +3,215 @@ package com.smarttahi.minicqupt.Data;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Question {
-    /**
-     * status : 200
-     * info : success
-     * data : {"is_self":0,"title":"这个代码太难写了\\\\ue056","description":"代码是真的难","reward":"2","disappear_at":"2018-04-27 02:22:22","tags":"PHP","kind":"其他","photo_urls":[],"questioner_nickname":"。","questioner_photo_thumbnail_src":"","questioner_gender":"女","answers":[{"id":"10","nickname":"Jay","photo_thumbnail_src":"http://wx.idsbllp.cn/cyxbsMobile/Public/photo/thumbnail/1503374869_593154551.png","gender":"男","content":"菜","created_at":"2018-04-22 14:08:50","praise_num":"0","comment_num":"0","is_adopted":"0","is_praised":0,"photo_url":[]}]}
-     */
 
-    private int status;
-    private String info;
-    private DataBean data;
 
-    public int getStatus() {
-        return status;
-    }
+       /**
+        * status : 200
+        * info : success
+        * data : [{"title":"又在写bug\\\\ue056","description":"bug是真的多","kind":"其他","tags":"PHP","reward":2,"answer_num":0,"disappear_at":"2019-02-27 01:11:20","created_at":"2018-05-19 17:35:14","is_anonymous":0,"id":52,"photo_thumbnail_src":"","nickname":"。","gender":"女"}]
+        */
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
+       private java.util.List<DataBean> data;
 
-    public String getInfo() {
-        return info;
-    }
+       public List<DataBean> getData() {
+           return data;
+       }
 
-    public void setInfo(String info) {
-        this.info = info;
-    }
+       public void setData(List<DataBean> data) {
+           this.data = data;
+       }
 
-    public DataBean getData() {
-        return data;
-    }
+       public static class DataBean implements Parcelable {
 
-    public void setData(DataBean data) {
-        this.data = data;
-    }
+           /**
+            * title : 又在写bug\\ue056
+            * description : bug是真的多
+            * kind : 其他
+            * tags : PHP
+            * reward : 2
+            * answer_num : 0
+            * disappear_at : 2019-02-27 01:11:20
+            * created_at : 2018-05-19 17:35:14
+            * is_anonymous : 0
+            * id : 52
+            * photo_thumbnail_src :
+            * nickname : 。
+            * gender : 女
+            */
 
-    public static class DataBean implements Parcelable {
-        /**
-         * is_self : 0
-         * title : 这个代码太难写了\\ue056
-         * description : 代码是真的难
-         * reward : 2
-         * disappear_at : 2018-04-27 02:22:22
-         * tags : PHP
-         * kind : 其他
-         * photo_urls : []
-         * questioner_nickname : 。
-         * questioner_photo_thumbnail_src :
-         * questioner_gender : 女
-         * answers : [{"id":"10","nickname":"Jay","photo_thumbnail_src":"http://wx.idsbllp.cn/cyxbsMobile/Public/photo/thumbnail/1503374869_593154551.png","gender":"男","content":"菜","created_at":"2018-04-22 14:08:50","praise_num":"0","comment_num":"0","is_adopted":"0","is_praised":0,"photo_url":[]}]
-         */
+           private String title;
+           private String description;
+           private String kind;
+           private String tags;
+           private int reward;
+           private int answer_num;
+           private String disappear_at;
+           private String created_at;
+           private int is_anonymous;
+           private int id;
+           private String photo_thumbnail_src;
+           private String nickname;
+           private String gender;
 
-        private int is_self;
-        private String title;
-        private String description;
-        private String reward;
-        private String disappear_at;
-        private String tags;
-        private String kind;
-        private String questioner_nickname;
-        private String questioner_photo_thumbnail_src;
-        private String questioner_gender;
-        private List<?> photo_urls;
-        private List<AnswersBean> answers;
+           public String getTitle() {
+               return title;
+           }
 
-        public int getIs_self() {
-            return is_self;
-        }
+           public void setTitle(String title) {
+               this.title = title;
+           }
 
-        public void setIs_self(int is_self) {
-            this.is_self = is_self;
-        }
+           public String getDescription() {
+               return description;
+           }
 
-        public String getTitle() {
-            return title;
-        }
+           public void setDescription(String description) {
+               this.description = description;
+           }
 
-        public void setTitle(String title) {
-            this.title = title;
-        }
+           public String getKind() {
+               return kind;
+           }
 
-        public String getDescription() {
-            return description;
-        }
+           public void setKind(String kind) {
+               this.kind = kind;
+           }
 
-        public void setDescription(String description) {
-            this.description = description;
-        }
+           public String getTags() {
+               return tags;
+           }
 
-        public String getReward() {
-            return reward;
-        }
+           public void setTags(String tags) {
+               this.tags = tags;
+           }
 
-        public void setReward(String reward) {
-            this.reward = reward;
-        }
+           public int getReward() {
+               return reward;
+           }
 
-        public String getDisappear_at() {
-            return disappear_at;
-        }
+           public void setReward(int reward) {
+               this.reward = reward;
+           }
 
-        public void setDisappear_at(String disappear_at) {
-            this.disappear_at = disappear_at;
-        }
+           public int getAnswer_num() {
+               return answer_num;
+           }
 
-        public String getTags() {
-            return tags;
-        }
+           public void setAnswer_num(int answer_num) {
+               this.answer_num = answer_num;
+           }
 
-        public void setTags(String tags) {
-            this.tags = tags;
-        }
+           public String getDisappear_at() {
+               return disappear_at;
+           }
 
-        public String getKind() {
-            return kind;
-        }
+           public void setDisappear_at(String disappear_at) {
+               this.disappear_at = disappear_at;
+           }
 
-        public void setKind(String kind) {
-            this.kind = kind;
-        }
+           public String getCreated_at() {
+               return created_at;
+           }
 
-        public String getQuestioner_nickname() {
-            return questioner_nickname;
-        }
+           public void setCreated_at(String created_at) {
+               this.created_at = created_at;
+           }
 
-        public void setQuestioner_nickname(String questioner_nickname) {
-            this.questioner_nickname = questioner_nickname;
-        }
+           public int getIs_anonymous() {
+               return is_anonymous;
+           }
 
-        public String getQuestioner_photo_thumbnail_src() {
-            return questioner_photo_thumbnail_src;
-        }
+           public void setIs_anonymous(int is_anonymous) {
+               this.is_anonymous = is_anonymous;
+           }
 
-        public void setQuestioner_photo_thumbnail_src(String questioner_photo_thumbnail_src) {
-            this.questioner_photo_thumbnail_src = questioner_photo_thumbnail_src;
-        }
+           public int getId() {
+               return id;
+           }
 
-        public String getQuestioner_gender() {
-            return questioner_gender;
-        }
+           public void setId(int id) {
+               this.id = id;
+           }
 
-        public void setQuestioner_gender(String questioner_gender) {
-            this.questioner_gender = questioner_gender;
-        }
+           public String getPhoto_thumbnail_src() {
+               return photo_thumbnail_src;
+           }
 
-        public List<?> getPhoto_urls() {
-            return photo_urls;
-        }
+           public void setPhoto_thumbnail_src(String photo_thumbnail_src) {
+               this.photo_thumbnail_src = photo_thumbnail_src;
+           }
 
-        public void setPhoto_urls(List<String> photo_urls) {
-            this.photo_urls = photo_urls;
-        }
+           public String getNickname() {
+               return nickname;
+           }
 
-        public List<AnswersBean> getAnswers() {
-            return answers;
-        }
+           public void setNickname(String nickname) {
+               this.nickname = nickname;
+           }
 
-        public void setAnswers(List<AnswersBean> answers) {
-            this.answers = answers;
-        }
+           public String getGender() {
+               return gender;
+           }
 
-        public static class AnswersBean {
-            /**
-             * id : 10
-             * nickname : Jay
-             * photo_thumbnail_src : http://wx.idsbllp.cn/cyxbsMobile/Public/photo/thumbnail/1503374869_593154551.png
-             * gender : 男
-             * content : 菜
-             * created_at : 2018-04-22 14:08:50
-             * praise_num : 0
-             * comment_num : 0
-             * is_adopted : 0
-             * is_praised : 0
-             * photo_url : []
-             */
+           public void setGender(String gender) {
+               this.gender = gender;
+           }
 
-            private String id;
-            private String nickname;
-            private String photo_thumbnail_src;
-            private String gender;
-            private String content;
-            private String created_at;
-            private String praise_num;
-            private String comment_num;
-            private String is_adopted;
-            private int is_praised;
-            private List<?> photo_url;
+           @Override
+           public int describeContents() {
+               return 0;
+           }
 
-            public String getId() {
-                return id;
-            }
+           @Override
+           public void writeToParcel(Parcel dest, int flags) {
+               dest.writeString(this.title);
+               dest.writeString(this.description);
+               dest.writeString(this.kind);
+               dest.writeString(this.tags);
+               dest.writeInt(this.reward);
+               dest.writeInt(this.answer_num);
+               dest.writeString(this.disappear_at);
+               dest.writeString(this.created_at);
+               dest.writeInt(this.is_anonymous);
+               dest.writeInt(this.id);
+               dest.writeString(this.photo_thumbnail_src);
+               dest.writeString(this.nickname);
+               dest.writeString(this.gender);
+           }
 
-            public void setId(String id) {
-                this.id = id;
-            }
+           public DataBean() {
+           }
 
-            public String getNickname() {
-                return nickname;
-            }
+           protected DataBean(Parcel in) {
+               this.title = in.readString();
+               this.description = in.readString();
+               this.kind = in.readString();
+               this.tags = in.readString();
+               this.reward = in.readInt();
+               this.answer_num = in.readInt();
+               this.disappear_at = in.readString();
+               this.created_at = in.readString();
+               this.is_anonymous = in.readInt();
+               this.id = in.readInt();
+               this.photo_thumbnail_src = in.readString();
+               this.nickname = in.readString();
+               this.gender = in.readString();
+           }
 
-            public void setNickname(String nickname) {
-                this.nickname = nickname;
-            }
+           public static final Parcelable.Creator<DataBean> CREATOR = new Parcelable.Creator<DataBean>() {
+               @Override
+               public DataBean createFromParcel(Parcel source) {
+                   return new DataBean(source);
+               }
 
-            public String getPhoto_thumbnail_src() {
-                return photo_thumbnail_src;
-            }
+               @Override
+               public DataBean[] newArray(int size) {
+                   return new DataBean[size];
+               }
+           };
+       }
 
-            public void setPhoto_thumbnail_src(String photo_thumbnail_src) {
-                this.photo_thumbnail_src = photo_thumbnail_src;
-            }
-
-            public String getGender() {
-                return gender;
-            }
-
-            public void setGender(String gender) {
-                this.gender = gender;
-            }
-
-            public String getContent() {
-                return content;
-            }
-
-            public void setContent(String content) {
-                this.content = content;
-            }
-
-            public String getCreated_at() {
-                return created_at;
-            }
-
-            public void setCreated_at(String created_at) {
-                this.created_at = created_at;
-            }
-
-            public String getPraise_num() {
-                return praise_num;
-            }
-
-            public void setPraise_num(String praise_num) {
-                this.praise_num = praise_num;
-            }
-
-            public String getComment_num() {
-                return comment_num;
-            }
-
-            public void setComment_num(String comment_num) {
-                this.comment_num = comment_num;
-            }
-
-            public String getIs_adopted() {
-                return is_adopted;
-            }
-
-            public void setIs_adopted(String is_adopted) {
-                this.is_adopted = is_adopted;
-            }
-
-            public int getIs_praised() {
-                return is_praised;
-            }
-
-            public void setIs_praised(int is_praised) {
-                this.is_praised = is_praised;
-            }
-
-            public List<?> getPhoto_url() {
-                return photo_url;
-            }
-
-            public void setPhoto_url(List<?> photo_url) {
-                this.photo_url = photo_url;
-            }
-        }
-
-        @Override
-        public int describeContents() {
-            return 0;
-        }
-
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            dest.writeInt(this.is_self);
-            dest.writeString(this.title);
-            dest.writeString(this.description);
-            dest.writeString(this.reward);
-            dest.writeString(this.disappear_at);
-            dest.writeString(this.tags);
-            dest.writeString(this.kind);
-            dest.writeString(this.questioner_nickname);
-            dest.writeString(this.questioner_photo_thumbnail_src);
-            dest.writeString(this.questioner_gender);
-            dest.writeList(this.photo_urls);
-            dest.writeList(this.answers);
-        }
-
-        public DataBean() {
-        }
-
-        protected DataBean(Parcel in) {
-            this.is_self = in.readInt();
-            this.title = in.readString();
-            this.description = in.readString();
-            this.reward = in.readString();
-            this.disappear_at = in.readString();
-            this.tags = in.readString();
-            this.kind = in.readString();
-            this.questioner_nickname = in.readString();
-            this.questioner_photo_thumbnail_src = in.readString();
-            this.questioner_gender = in.readString();
-            this.photo_urls = new ArrayList<String>();
-            in.readList(this.photo_urls,String.class.getClassLoader());
-            this.answers = new ArrayList<AnswersBean>();
-            in.readList(this.answers, AnswersBean.class.getClassLoader());
-        }
-
-        public static final Parcelable.Creator<DataBean> CREATOR = new Parcelable.Creator<DataBean>() {
-            @Override
-            public DataBean createFromParcel(Parcel source) {
-                return new DataBean(source);
-            }
-
-            @Override
-            public DataBean[] newArray(int size) {
-                return new DataBean[size];
-            }
-        };
-    }
 }

@@ -4,12 +4,15 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
-import com.smarttahi.cquptinhand.Data.User;
+import com.smarttahi.minicqupt.Data.User;
+
+//import com.smarttahi.cquptinhand.Data.User;
 
 public class MyApplication extends Application {
+    public static User user;
     @SuppressLint("StaticFieldLeak")
     protected static Context thisContext;
-    public static User user;
+//    public static User user;
 
     @Override
     public void onCreate() {

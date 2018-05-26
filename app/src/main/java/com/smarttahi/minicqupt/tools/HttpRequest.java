@@ -3,6 +3,8 @@ package com.smarttahi.minicqupt.tools;
 import android.os.Handler;
 import android.util.Log;
 
+import com.smarttahi.minicqupt.Data.Question;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,6 +19,8 @@ import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -52,8 +56,98 @@ public class HttpRequest {
                             public void run() {
                                 try {
                                     JSONmanager jsoNmanager = new JSONmanager();
+                                  Response data = new Response(in);
+                                    ArrayList<Question.DataBean> list = new ArrayList<>();
+                                    for (int i = 0; i < JSONmanager.getArrayNumber(data.getDate()); i++) {
+                                        Question.DataBean dataBean = new Question.DataBean();
+                                       dataBean= JSONmanager.getQuestionList(data.getDate());
+                                        list.add(dataBean);
+                                    }
 
-                                    callback.onSuccess(new Response(in));
+                                    callback.onSuccess(list);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                    callback.onFiled(e);
+                                }
+                                //使用回调，返回请求得到的数据
+                            }
+                        });
+                    } else {
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                callback.onFiled(new Exception("网络连接失败"));
+                            }
+                        });
+                    }
+                } catch (final ProtocolException e) {
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            callback.onFiled(e);
+                        }
+                    });
+                } catch (final IOException e) {
+                    e.printStackTrace();
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            callback.onFiled(e);
+                        }
+                    });
+                } finally {
+                    if (connection != null) {
+                        connection.disconnect();
+                    }
+                    if (out!=null){
+                        try {
+                            out.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }).start();
+    }
+
+    public static void sentHttpRequest(final String parameter, final String api,final String api2, final Callback callback) {
+        final Handler handler = new Handler();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    URL url = new URL(api);
+                    connection = (HttpURLConnection) url.openConnection();
+                    connection.setReadTimeout(5 * 1000);
+                    connection.setConnectTimeout(10 * 1000);
+                    connection.setRequestMethod("POST");
+                    connection.setDoInput(true);
+                    connection.setDoOutput(true);
+                    connection.setUseCaches(false);
+                    connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                    out = connection.getOutputStream();
+                    out.write(parameter.getBytes());
+                    out.flush();
+                    if (connection.getResponseCode() == 200) {
+                        final byte[] in = ReadStream(connection.getInputStream());
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    if(api.equals(Config.Api_Question_List)){
+                                        JSONmanager jsoNmanager = new JSONmanager();
+                                        Response data2 = new Response(in);
+                                        ArrayList<Question.DataBean> list = new ArrayList<>();
+                                        for (int i = 0; i < JSONmanager.getArrayNumber(data2.getDate()); i++) {
+                                            Question.DataBean dataBean = new Question.DataBean();
+                                            dataBean= JSONmanager.getQuestionList(data2.getDate());
+                                            list.add(dataBean);
+                                        }
+                                        callback.onSuccess(list);
+                                    }
+                                    Response data = new Response(in);
+                                    callback.onSuccess(data);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                     callback.onFiled(e);
@@ -141,8 +235,10 @@ public class HttpRequest {
         return null;
     }
 
-    public interface Callback {
+    public static interface Callback {
         void onSuccess(Response response) throws JSONException;
+
+        void onSuccess(ArrayList<?> response) throws JSONException;
 
         void onFiled(Exception e);
     }

@@ -1,31 +1,56 @@
 package com.smarttahi.minicqupt.activity;
 
+
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.view.MotionEvent;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.smarttahi.minicqupt.R;
+import com.smarttahi.minicqupt.tools.ChangeUnit;
+import com.smarttahi.minicqupt.tools.Config;
 
-public class BaseActivity extends AppCompatActivity {
+/**
+ * Created by SmartTahi on 2018/5/26.
+ * 点击空白部分收起软键盘
+ * 在该类中保存所有activity中都需要反复用到的方法
+ * 保存Data对象实例
+ *
+ */
+
+@SuppressLint("Registered")
+public abstract class BaseActivity extends AppCompatActivity {
+    TextView TopTitle;
+    RelativeLayout Top;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    public boolean onTouchEvent(MotionEvent event) {
+        if (null != this.getCurrentFocus()) {
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            assert inputMethodManager != null;
+            return inputMethodManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.onTouchEvent(event);
     }
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    public static boolean isLengthLegal(String str,int Limit) {
+        return str.length() > 0 && str.length() < Limit;
+    }
+
+//    public static boolean isPasswordLegal(String str) {
+//        return str.length() > 6 || str.length() < 18;
+//    }
+
+    abstract void setTitle ();
 }

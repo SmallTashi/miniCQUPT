@@ -12,7 +12,7 @@
         android:background="@drawable/bg_login"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-        <include layout="@layout/layout_top_title"/>
+        <include layout="@layout/bg_layout_top_title"/>
         <ImageView
             android:padding="5dp"
             android:layout_width="wrap_content"
