@@ -19,12 +19,23 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp" />
         <ImageButton
-            android:id="@+id/login_back"
-            android:layout_marginStart="10dp"
+            android:id="@+id/top_title_left"
+            android:layout_marginStart="20dp"
             android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/course_back"
+            tools:src="@mipmap/course_back"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            tools:ignore="ContentDescription" />
+        <ImageButton
+            android:id="@+id/top_title_right"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:src="@mipmap/course_back"
             android:background="@null"
             android:layout_centerVertical="true"
             tools:ignore="ContentDescription" />

@@ -27,6 +27,10 @@ public  class ChangeUnit {
         return (int)(px/scale+0.5f);
     }
 
+    public static int pt2sp(Context context,float pt){
+      return px2sp(context,pt2px(context,pt));
+    }
+
     public static int pt2dp(Context context,float pt){
         int px=pt2px(context,pt);
         return px2dp(context,px);

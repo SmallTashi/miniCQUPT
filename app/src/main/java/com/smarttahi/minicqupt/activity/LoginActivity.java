@@ -34,7 +34,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     @Override
-    void setTitle() {
+    void setTitle(String s) {
         TopTitle = findViewById(R.id.title);
         Top = findViewById(R.id.top_title);
         Top.setMinimumWidth(ChangeUnit.pt2dp(this,375));

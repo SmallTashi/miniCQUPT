@@ -1,66 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RadioGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/bottom"
+    android:weightSum="4"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:weightSum="4">
+    android:layout_height="wrap_content">
 
-    <RadioButton
-        android:clickable="true"
-        android:id="@+id/bottom_course_base"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:button="@null"
-        android:drawablePadding="5dp"
-        android:drawableTop="@drawable/bottom_course_sel_unsel"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="@string/course_time_table"
-        android:focusable="true" />
+        <RadioButton
+            android:clickable="true"
+            android:id="@+id/bottom_course_base"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/bottom_course_sel_unsel"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/course_time_table"
+            android:focusable="true" />
 
-    <RadioButton
-        android:clickable="true"
-        android:id="@+id/bottom_question"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:button="@null"
-        android:drawablePadding="5dp"
-        android:drawableTop="@drawable/bottom_question_sel_unsel"
-        android:gravity="center"
-        android:padding="5dp"
+        <RadioButton
+            android:clickable="true"
+            android:id="@+id/bottom_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/bottom_question_sel_unsel"
+            android:gravity="center"
+            android:padding="5dp"
 
-        android:text="@string/bottom_question"
-        android:focusable="true" />
+            android:text="@string/bottom_question"
+            android:focusable="true" />
 
-    <RadioButton
-        android:clickable="true"
-        android:id="@+id/bottom_find"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:button="@null"
-        android:drawablePadding="5dp"
-        android:drawableTop="@drawable/bottom_community_sel_unsel"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="@string/bottom_community"
-        android:focusable="true" />
+        <RadioButton
+            android:clickable="true"
+            android:id="@+id/bottom_find"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/bottom_community_sel_unsel"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/bottom_community"
+            android:focusable="true" />
 
-    <RadioButton
-        android:id="@+id/bottom_mine"
-        android:clickable="true"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:button="@null"
-        android:drawablePadding="5dp"
-        android:drawableTop="@drawable/bottom_mine_sel_unsel"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="@string/bottom_mine"
-        android:focusable="true" />
-</LinearLayout>
+        <RadioButton
+            android:id="@+id/bottom_mine"
+            android:clickable="true"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/bottom_mine_sel_unsel"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/bottom_mine"
+            android:focusable="true" />
+
+</RadioGroup>
+

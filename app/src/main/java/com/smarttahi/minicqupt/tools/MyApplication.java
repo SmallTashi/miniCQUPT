@@ -9,6 +9,9 @@ import com.smarttahi.minicqupt.Data.User;
 //import com.smarttahi.cquptinhand.Data.User;
 
 public class MyApplication extends Application {
+    public static final int ANSWER_LIST = 0;
+    public static final int QUESTION_LIST = 1;
+    public static final int MINE_LIST = 2;
     public static User user;
     @SuppressLint("StaticFieldLeak")
     protected static Context thisContext;
@@ -18,6 +21,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         thisContext = getApplicationContext();
+
     }
     public static Context getThisContext(){
         return thisContext;

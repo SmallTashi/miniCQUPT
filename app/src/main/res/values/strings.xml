@@ -17,6 +17,11 @@
     <string name="course_location">教室</string>
     <string name="course_type">类型</string>
     <string name="course_week">周数（1—9周，11—13周）</string>
+    <string name="question_item_char">#</string>
+    <string name="question_all">全 部</string>
+    <string name="question_study">学 习</string>
+    <string name="question_life">生 活</string>
+    <string name="question_useless">情 感</string>
 
 
 </resources>

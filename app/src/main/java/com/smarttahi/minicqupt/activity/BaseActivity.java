@@ -52,5 +52,5 @@ public abstract class BaseActivity extends AppCompatActivity {
 //        return str.length() > 6 || str.length() < 18;
 //    }
 
-    abstract void setTitle ();
+    abstract void setTitle (String s);
 }

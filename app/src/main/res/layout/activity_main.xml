@@ -18,13 +18,13 @@
         android:layout_above="@id/main_bottom"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-        <!--<fragment-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/main_fragment"-->
-            <!--android:name="com.smarttahi.minicqupt.fragment.FragmentQuestion"-->
-            <!--tools:layout="@layout/lay_mine"-->
-            <!--/>-->
+        <fragment
+            android:id="@+id/main_fragment"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.smarttahi.minicqupt.fragment.QuestionFragment"
+            />
     </FrameLayout>
 
     <include

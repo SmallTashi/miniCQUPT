@@ -10,7 +10,7 @@
         android:background="@drawable/mine_bg_me_top">
 
         <ImageView
-            android:id="@+id/mine_head"
+            android:id="@+id/question_mine_head"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerVertical="true"
@@ -39,7 +39,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="70dp"
             android:layout_marginStart="8dp"
-            android:layout_toEndOf="@+id/mine_head"
+            android:layout_toEndOf="@+id/question_mine_head"
             android:background="@null"
             android:drawableEnd="@mipmap/mine_ic_me_edit"
             android:drawablePadding="8dp"
