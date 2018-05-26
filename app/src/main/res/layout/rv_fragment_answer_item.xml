@@ -1,6 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <include layout="@layout/bg_layout_top_title"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <include layout="@layout/bg_question_kind"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/question_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#222222"
+            tools:text="题目题目题目题目" />
+        <ImageView
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/line"
+            tools:ignore="ContentDescription" />
+
+
+    </LinearLayout>
+        <RelativeLayout
+            android:id="@+id/question_item_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/question_mine_head"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+
+                android:src="@mipmap/mine_default_avatar"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/question_idName"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@id/question_mine_head"
+                tools:text="王尼玛" />
+
+            <TextView
+                android:id="@+id/answer_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@id/question_idName"
+                android:layout_toEndOf="@+id/question_mine_head"
+                tools:text="2018-5-57" />
+            <TextView
+                android:id="@+id/question_item_pay"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:drawablePadding="6dp"
+                android:drawableStart="@mipmap/question_detail_answer_finish"
+                android:textColor="#777777"
+                tools:text="已采纳"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/answer_detail"
+                android:layout_marginStart="20dp"
+                android:id="@+id/question_item_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                tools:text="描述描述描述描述描述描述描述" />
+
+        </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/bg_color"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#888888"
+        android:padding="15dp"
+        android:text="评 论 40"
+
+        tools:ignore="HardcodedText" />
+    <ImageView
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/line"
+        tools:ignore="ContentDescription" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/answer_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+    </LinearLayout>
+

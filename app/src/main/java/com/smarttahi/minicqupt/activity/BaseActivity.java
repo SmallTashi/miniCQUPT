@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,8 +25,10 @@ import com.smarttahi.minicqupt.tools.Config;
  */
 
 @SuppressLint("Registered")
-public abstract class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity {
     TextView TopTitle;
+    ImageView Left;
+    ImageView Right;
     RelativeLayout Top;
 
     @Override
@@ -52,5 +55,4 @@ public abstract class BaseActivity extends AppCompatActivity {
 //        return str.length() > 6 || str.length() < 18;
 //    }
 
-    abstract void setTitle (String s);
 }

@@ -6,6 +6,8 @@
     <color name="colorEndLogin">#798DFA</color>
     <color name="colorStartLogin">#58B1FC</color>
     <color name="white">#ffffff</color>
-    <color name="bg_color">#F0F0F0</color>
+    <color name="bg_color">#F6F6F6</color>
     <color name="bg_login_bottom">#F6F6F6</color>
+    <color name="answer_detail">#333333</color>
+    <color name="answer_comment">#666666</color>
 </resources>

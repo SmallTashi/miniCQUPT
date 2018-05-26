@@ -1,5 +1,6 @@
 package com.smarttahi.minicqupt.ViewHolder;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -7,9 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.smarttahi.minicqupt.R;
+import com.smarttahi.minicqupt.tools.ChangeUnit;
 import com.smarttahi.minicqupt.tools.MyApplication;
-
-import org.w3c.dom.Text;
 
 public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView mine_item_content;
@@ -31,11 +31,21 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
             initQuestionItem(itemView);
         } else if (Type == MyApplication.ANSWER_LIST) {
             initAnswerItem(itemView);
-        } else {
+        }else if(Type == MyApplication.ANSWER_DETAIL){
+            initDetailAnswer(itemView);
+        }
+        else {
             initMineItem(itemView);
         }
     }
+
+    private void initDetailAnswer(View itemView) {
+
+    }
+
     private void initAnswerItem(View itemView) {
+
+
     }
 
     private void initQuestionItem(View itemView) {
@@ -46,7 +56,9 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
         question_item_top = itemView.findViewById(R.id.question_item_top);
         question_mine_head = itemView.findViewById(R.id.question_mine_head);
         question_idName = itemView.findViewById(R.id.question_idName);
-        question_time_least = itemView.findViewById(R.id.question_time_least);
+        question_time_least = itemView.findViewById(R.id.answer_time);
+        CardView cardView = itemView.findViewById(R.id.question_card);
+        cardView.setRadius(ChangeUnit.pt2dp(MyApplication.getThisContext(),6));
     }
 
     private void initMineItem(View itemView) {

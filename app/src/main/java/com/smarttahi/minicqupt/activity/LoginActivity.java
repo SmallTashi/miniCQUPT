@@ -33,13 +33,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         setContentView(R.layout.layout_login);
     }
 
-    @Override
     void setTitle(String s) {
         TopTitle = findViewById(R.id.title);
         Top = findViewById(R.id.top_title);
         Top.setMinimumWidth(ChangeUnit.pt2dp(this,375));
         Top.setMinimumHeight(ChangeUnit.pt2dp(this,65));
-        TopTitle.setText("登 陆");
+        TopTitle.setText(s);
     }
 
     @Override
