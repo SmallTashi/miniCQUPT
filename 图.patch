@@ -1,0 +1,72 @@
+Index: app/src/main/res/layout/dialog_course.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/dialog_course.xml	(date 1527424577000)
++++ app/src/main/res/layout/dialog_course.xml	(date 1527425315788)
+@@ -5,9 +5,9 @@
+     android:layout_margin="60dp"
+     android:weightSum="6"
+     android:padding="30dp"
+-    android:gravity="center"
++    android:layout_gravity="left"
+     android:background="@drawable/bg_dialog_course"
+-    android:layout_gravity="center"
++
+     android:orientation="vertical"
+     android:layout_height="300dp"
+     xmlns:tools="http://schemas.android.com/tools">
+@@ -16,7 +16,6 @@
+            android:gravity="center"
+            android:id="@+id/course_name"
+      android:layout_weight="1"
+-           android:drawablePadding="-100dp"
+            android:drawableStart="@mipmap/course_name"
+            android:text="@string/course_name"
+            android:layout_width="match_parent"
+@@ -26,17 +25,15 @@
+         android:gravity="center"
+         android:id="@+id/course_teacher"
+         android:layout_weight="1"
+-        android:drawablePadding="-100dp"
+         android:drawableStart="@mipmap/course_teacher"
+         android:text="@string/course_teacher"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         />
+     <TextView
+-        android:gravity="center"
+         android:id="@+id/course_location"
+         android:layout_weight="1"
+-        android:drawablePadding="-100dp"
++        android:gravity="center"
+         android:drawableStart="@mipmap/course_location"
+         android:text="@string/course_location"
+         android:layout_width="match_parent"
+@@ -48,7 +45,7 @@
+         android:layout_weight="1"
+ 
+         android:drawableStart="@mipmap/course_time"
+-        android:text="@string/course_time"
++        android:text="时 间"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         />
+@@ -56,7 +53,6 @@
+         android:gravity="center"
+         android:id="@+id/course_type"
+         android:layout_weight="1"
+-        android:drawablePadding="-100dp"
+         android:drawableStart="@mipmap/course_type"
+         android:text="@string/course_type"
+         android:layout_width="match_parent"
+@@ -67,7 +63,7 @@
+         android:id="@+id/course_week"
+         android:layout_weight="1"
+         android:drawableStart="@mipmap/course_time_week"
+-        android:text="@string/course_week"
++        android:text="周 数"
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         />
