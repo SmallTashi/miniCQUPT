@@ -26,10 +26,7 @@ import com.smarttahi.minicqupt.tools.Config;
 
 @SuppressLint("Registered")
 public class BaseActivity extends AppCompatActivity {
-    TextView TopTitle;
-    ImageView Left;
-    ImageView Right;
-    RelativeLayout Top;
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

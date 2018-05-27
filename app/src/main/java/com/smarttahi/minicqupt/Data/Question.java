@@ -14,17 +14,7 @@ public class Question {
         * data : [{"title":"又在写bug\\\\ue056","description":"bug是真的多","kind":"其他","tags":"PHP","reward":2,"answer_num":0,"disappear_at":"2019-02-27 01:11:20","created_at":"2018-05-19 17:35:14","is_anonymous":0,"id":52,"photo_thumbnail_src":"","nickname":"。","gender":"女"}]
         */
 
-       private java.util.List<DataBean> data;
-
-       public List<DataBean> getData() {
-           return data;
-       }
-
-       public void setData(List<DataBean> data) {
-           this.data = data;
-       }
-
-       public static class DataBean implements Parcelable {
+       public static class QuestionDataBean implements Parcelable {
 
            /**
             * title : 又在写bug\\ue056
@@ -182,10 +172,10 @@ public class Question {
                dest.writeString(this.gender);
            }
 
-           public DataBean() {
+           public QuestionDataBean() {
            }
 
-           DataBean(Parcel in) {
+           QuestionDataBean(Parcel in) {
                this.title = in.readString();
                this.description = in.readString();
                this.kind = in.readString();
@@ -201,15 +191,15 @@ public class Question {
                this.gender = in.readString();
            }
 
-           public static final Parcelable.Creator<DataBean> CREATOR = new Parcelable.Creator<DataBean>() {
+           public static final Parcelable.Creator<QuestionDataBean> CREATOR = new Parcelable.Creator<QuestionDataBean>() {
                @Override
-               public DataBean createFromParcel(Parcel source) {
-                   return new DataBean(source);
+               public QuestionDataBean createFromParcel(Parcel source) {
+                   return new QuestionDataBean(source);
                }
 
                @Override
-               public DataBean[] newArray(int size) {
-                   return new DataBean[size];
+               public QuestionDataBean[] newArray(int size) {
+                   return new QuestionDataBean[size];
                }
            };
        }

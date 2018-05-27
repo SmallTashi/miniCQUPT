@@ -5,42 +5,14 @@ import android.os.Parcelable;
 
 import java.util.List;
 
-public class CommentList {
+
     /**
      * status : 200
      * info : success
      * data : [{"content":"测试","created_at":"2018-02-24 01:45:56","nickname":"溟\\\\n濛","photo_thumbnail_src":"http://wx.idsbllp.cn/cyxbsMobile/Public/photo/thumbnail/1503374918_2132490885.png","gender":"男"},{"content":"测试2","created_at":"2018-02-24 01:48:42","nickname":"溟\\\\n濛","photo_thumbnail_src":"http://wx.idsbllp.cn/cyxbsMobile/Public/photo/thumbnail/1503374918_2132490885.png","gender":"男"}]
      */
 
-    private int status;
-    private String info;
-    private List<DataBean> data;
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public List<DataBean> getData() {
-        return data;
-    }
-
-    public void setData(List<DataBean> data) {
-        this.data = data;
-    }
-
-    public static class DataBean implements Parcelable {
+    public class CommentItemBean implements Parcelable {
         /**
          * content : 测试
          * created_at : 2018-02-24 01:45:56
@@ -95,6 +67,10 @@ public class CommentList {
             this.gender = gender;
         }
 
+        public CommentItemBean() {
+        }
+
+
         @Override
         public int describeContents() {
             return 0;
@@ -109,10 +85,7 @@ public class CommentList {
             dest.writeString(this.gender);
         }
 
-        public DataBean() {
-        }
-
-         DataBean(Parcel in) {
+        CommentItemBean(Parcel in) {
             this.content = in.readString();
             this.created_at = in.readString();
             this.nickname = in.readString();
@@ -120,16 +93,16 @@ public class CommentList {
             this.gender = in.readString();
         }
 
-        public static final Parcelable.Creator<DataBean> CREATOR = new Parcelable.Creator<DataBean>() {
+        public static final Parcelable.Creator<CommentItemBean> CREATOR = new Parcelable.Creator<CommentItemBean>() {
             @Override
-            public DataBean createFromParcel(Parcel source) {
-                return new DataBean(source);
+            public CommentItemBean createFromParcel(Parcel source) {
+                return new CommentItemBean(source);
             }
 
             @Override
-            public DataBean[] newArray(int size) {
-                return new DataBean[size];
+            public CommentItemBean[] newArray(int size) {
+                return new CommentItemBean[size];
             }
         };
     }
-}
+

@@ -4,15 +4,15 @@ import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
 
 public class PackParameter {
-    public static String User_Key(int stuNum, int idNum) {
+    public static String User_Key(String stuNum, String idNum) {
         return "stuNum=" + stuNum + "&idNum=" + idNum;
     }
 
-    public static String User_Remind(int stuNum, int idNum,int before_time,String content,int time_id,String date){
+    public static String User_Remind(String stuNum, String idNum,String before_time,String content,String time_id,String date){
         return "stuNum=" + stuNum + "&idNum=" + idNum + "&before_time=" + before_time + "&content=" + content + "&time_id=" + time_id + "&date=" + date ;
     }
 
-    public static String User_Remind_Del(int stuNum, int idNum,int id) {
+    public static String User_Remind_Del(String stuNum, String idNum,String id) {
         return "stuNum=" + stuNum + "&idNum=" + idNum+"&id"+id;
     }
 

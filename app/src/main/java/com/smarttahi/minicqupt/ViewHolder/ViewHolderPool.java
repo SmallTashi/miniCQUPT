@@ -15,6 +15,7 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
     public TextView mine_item_content;
     public ImageView mine_item_icon;
 
+
     public TextView question_item_title;
     public TextView question_item_kind;
     public TextView question_item_detail;
