@@ -23,6 +23,8 @@
     <string name="question_life">生 活</string>
     <string name="question_useless">情 感</string>
     <string name="picture">查看图片</string>
+    <string name="mine_shop">积 分 商 城</string>
+    <string name="about_me">与 我 相 关</string>
 
 
 </resources>

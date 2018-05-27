@@ -1,41 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@mipmap/mine_bg_me_item_full"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
    >
+    <RelativeLayout
+        android:background="@mipmap/mine_bg_me_item_full"
 
-    <ImageView
-        android:id="@+id/mine_item_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
         android:layout_gravity="center"
-        android:layout_marginStart="25dp"
-        tools:ignore="ContentDescription"
-        tools:src="@mipmap/mine_ic_me_draft" />
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
 
-    <TextView
-        android:id="@+id/mine_item_content"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_centerVertical="true"
+        <ImageView
+            android:id="@+id/mine_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="22dp"
+            tools:ignore="ContentDescription"
+            android:src="@mipmap/mine_ic_me_sign" />
+
+        <TextView
+            android:id="@+id/mine_item_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:textSize="16sp"
+
+            android:text="每 日 签 到"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:id="@+id/mine_icon_goto"
+            android:layout_width="21dp"
+            android:layout_height="39dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="22dp"
+            android:background="@null"
+            android:src="@mipmap/mine_goto"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="@mipmap/mine_bg_me_item_full"
+
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:layout_toEndOf="@+id/mine_item_icon"
-        android:textSize="16sp"
-        tools:text="草 稿 箱" />
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
 
-    <ImageButton
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="22dp"
+            tools:ignore="ContentDescription"
+            android:src="@mipmap/mine_ic_me_store" />
 
-        android:id="@+id/mine_icon_goto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="25dp"
-        android:src="@mipmap/mine_goto"
-        tools:ignore="ContentDescription" />
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:textSize="16sp"
+            android:textScaleX="1"
+            android:text="@string/mine_shop" />
+
+        <ImageButton
+            android:layout_width="21dp"
+            android:layout_height="39dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="22dp"
+            android:background="@null"
+            android:src="@mipmap/mine_goto"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/mine_bg_me_item_full"
+
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="22dp"
+            tools:ignore="ContentDescription"
+            android:src="@mipmap/mine_ic_me_draft" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:textSize="16sp"
+            android:text="草 稿 箱"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:layout_width="21dp"
+            android:layout_height="39dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="22dp"
+            android:background="@null"
+            android:src="@mipmap/mine_goto"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/mine_bg_me_item_full"
+
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="22dp"
+            tools:ignore="ContentDescription"
+            android:src="@mipmap/mine_ic_me_question" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:textSize="16sp"
+            android:text="问 一 问"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:layout_width="21dp"
+            android:layout_height="39dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="22dp"
+            android:background="@null"
+            android:src="@mipmap/mine_goto"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/mine_bg_me_item_full"
+
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="22dp"
+            tools:ignore="ContentDescription"
+            android:src="@mipmap/mine_ic_me_help" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:textSize="16sp"
+            android:text="帮 一 帮"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:layout_width="21dp"
+            android:layout_height="39dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="22dp"
+            android:background="@null"
+            android:src="@mipmap/mine_goto"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+
+</LinearLayout>

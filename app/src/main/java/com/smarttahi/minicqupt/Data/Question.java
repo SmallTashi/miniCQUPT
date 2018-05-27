@@ -32,6 +32,7 @@ public class Question {
             * gender : 女
             */
 
+
            private String title;
            private String description;
            private String kind;

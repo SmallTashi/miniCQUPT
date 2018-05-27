@@ -44,6 +44,7 @@
                     tools:ignore="ContentDescription" />
 
                 <EditText
+                    android:textCursorDrawable="@drawable/bg_login"
                     android:text=""
                     android:maxLength="10"
                     android:id="@+id/login_stuNum"
@@ -79,6 +80,8 @@
                     tools:ignore="ContentDescription" />
 
                 <EditText
+                    android:textCursorDrawable="@drawable/bg_login"
+
                     android:text=""
                     android:maxLength="6"
                     android:id="@+id/login_idNum"
@@ -113,7 +116,7 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/bg_login_button"
                 android:text="@string/login"
-                android:textColor="@color/white"
+                android:textColor="@color/mine_text"
                 android:textSize="16sp"
                 android:focusable="true" />
 

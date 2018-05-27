@@ -24,7 +24,7 @@ public class PackParameter {
 
     //page=3&size=1&kind=其他
     public static String Question_List(int page, String kind) {
-        return "page=" + page + "&kind=" + kind;
+        return "page=" + page +"&size=6"+ "&kind=" + kind;
     }
 
     //stuNum=2017211566&idNum=252849&question_id=81

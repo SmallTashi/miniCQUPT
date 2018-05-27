@@ -16,11 +16,12 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
     public ImageView mine_item_icon;
 
 
+
     public TextView question_item_title;
     public TextView question_item_kind;
     public TextView question_item_detail;
-    public LinearLayout question_item_top;
-    public ImageView question_mine_head;
+//    public LinearLayout question_item_top;
+//    public ImageView question_mine_head;
     public TextView question_idName;
     public TextView question_time_least;
     public TextView question_item_pay;
@@ -46,7 +47,6 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
 
     private void initAnswerItem(View itemView) {
 
-
     }
 
     private void initQuestionItem(View itemView) {
@@ -54,8 +54,7 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
         question_item_title = itemView.findViewById(R.id.question_item_title);
         question_item_kind = itemView.findViewById(R.id.question_item_kind);
         question_item_detail = itemView.findViewById(R.id.question_item_detail);
-        question_item_top = itemView.findViewById(R.id.question_item_top);
-        question_mine_head = itemView.findViewById(R.id.question_mine_head);
+//        question_mine_head = itemView.findViewById(R.id.question_mine_head);
         question_idName = itemView.findViewById(R.id.question_idName);
         question_time_least = itemView.findViewById(R.id.answer_time);
         CardView cardView = itemView.findViewById(R.id.question_card);
@@ -69,9 +68,7 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
 
     @Override
     public void onClick(View v) {
-//        if (onItemClickLister != null) {
-//            onItemClickLister.onItemClick(itemView, getAdapterPosition());
-//        }
+        //TODO v
 
     }
 }

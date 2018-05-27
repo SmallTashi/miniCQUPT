@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,9 +23,6 @@ import com.smarttahi.minicqupt.tools.MyApplication;
 import com.smarttahi.minicqupt.tools.PackParameter;
 
 import org.json.JSONException;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
     public EditText idNum;
@@ -62,16 +58,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         setTitle(Left,Right,Top,TopTitle,"登 陆");
     }
 
-    void setTitle(
-            ImageView Left,
-            ImageView Right,
-            RelativeLayout Top, TextView TopTitle, String s) {
+    void setTitle(ImageView Left, ImageView Right, RelativeLayout Top, TextView TopTitle, String s) {
         Left.setImageResource(R.mipmap.course_back);
         Left.setVisibility(View.VISIBLE);
         Right.setVisibility(View.INVISIBLE);
-
-        Top.setMinimumWidth(ChangeUnit.pt2dp(this, 375));
-        Top.setMinimumHeight(ChangeUnit.pt2dp(this, 65));
         TopTitle.setText(s);
         }
 
@@ -116,16 +106,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                             } else{
                                checkUser = JSONmanager.checkUser(response.getDate());
                                 MyApplication.setUser(checkUser);
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                startActivity(intent);
+
                                 finish();
                             }
-                        }
-
-
-                        @Override
-                        public void onSuccess(ArrayList<?> response) throws JSONException {
-//                            addToast("", true);
                         }
 
                         @Override
@@ -134,24 +117,26 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         }
                     }
             );
+            UserMessage(MyApplication.getUser());
         }else {
             addToast("信息错误",false);
         }
 
-
-
     }
+    public void UserMessage(User checkUser){
+        HttpRequest.sentHttpsRequest(PackParameter.User_Key(checkUser.getStuNum(), checkUser.getIdNum()), Config.Api_User_Detail, new HttpRequest.Callback() {
+            @Override
+            public void onSuccess(HttpRequest.Response response) throws JSONException {
+                User add;
+                add = JSONmanager.getUser(response.getDate(),MyApplication.getUser());
+                MyApplication.setUser(add);
+            }
 
-    private void keepState(User user) {
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        String stuNum = user.getStuNum();
-        String idNum = user.getIdNum();
-        int userId = user.getId();
-        String stuName = user.getName();
-        String gender = user.getGender();
-        editor.apply();
-        editor.commit();
+            @Override
+            public void onFiled(Exception e) {
+
+            }
+        });
 
     }
 

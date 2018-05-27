@@ -6,45 +6,53 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="140dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:background="@drawable/mine_bg_me_top">
 
         <ImageView
             android:id="@+id/question_mine_head"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="82dp"
+            android:layout_height="81dp"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="19dp"
             android:src="@mipmap/mine_default_avatar" />
 
         <EditText
             android:id="@+id/mine_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/main_desc"
-            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="112dp"
+            android:layout_marginTop="44dp"
             android:background="@null"
             android:hint="@string/mine_name"
             android:inputType="text"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textColor="@color/mine_text"
+            android:textColorHighlight="@color/mine_text"
+            android:textCursorDrawable="@drawable/bg_login"
+            android:textSize="18sp"
+            android:textStyle="normal" />
 
         <EditText
+            android:textCursorDrawable="@drawable/bg_login"
+
             android:id="@+id/main_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/question_mine_head"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/mine_name"
+            android:layout_marginBottom="36dp"
             android:background="@null"
             android:drawableEnd="@mipmap/mine_ic_me_edit"
             android:drawablePadding="8dp"
             android:hint="@string/mine_desc"
             android:inputType="text"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/white"
+            android:textColor="@color/mine_text"
+            android:textColorHighlight="@color/mine_text"
             android:textSize="16sp" />
 
 

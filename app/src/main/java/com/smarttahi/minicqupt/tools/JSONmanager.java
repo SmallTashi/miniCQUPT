@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class JSONmanager {
     public static int getArrayNumber(String data) throws JSONException {
         JSONArray array = new JSONArray(data);
@@ -40,24 +42,28 @@ public class JSONmanager {
         return user;
     }
 
-    public static Question.QuestionDataBean getQuestionList(String data) throws JSONException {
-        JSONObject object = new JSONObject(data);
-        Question.QuestionDataBean bean = new Question.QuestionDataBean();
-        bean.setAnswer_num(object.getInt("answer_num"));
-        bean.setCreated_at(object.getString("created_at"));
-        bean.setTags(object.getString("tags"));
-        bean.setTitle(object.getString("title"));
-        bean.setDescription(object.getString("description"));
-        bean.setDisappear_at(object.getString("disappear_at"));
-        bean.setGender(object.getString("gender"));
-        bean.setId(object.getInt("id"));
-        bean.setNickname(object.getString("nickname"));
-        bean.setKind(object.getString("kind"));
-        bean.setIs_anonymous(object.getInt("is_anonymous"));
-        bean.setReward(object.getInt("reward"));
-        bean.setPhoto_thumbnail_src(object.getString("photo_thumbnail_src"));
-
-        return bean;
+    public static ArrayList<Question.QuestionDataBean> getQuestionList(String data) throws JSONException {
+        JSONArray array = new JSONArray(data);
+        ArrayList<Question.QuestionDataBean> list = new ArrayList<>();
+        for (int i = 0; array.getJSONObject(i)!=null; i++) {
+            JSONObject object =array.getJSONObject(i);
+            Question.QuestionDataBean bean = new Question.QuestionDataBean();
+            bean.setAnswer_num(object.getInt("answer_num"));
+            bean.setCreated_at(object.getString("created_at"));
+            bean.setTags(object.getString("tags"));
+            bean.setTitle(object.getString("title"));
+            bean.setDescription(object.getString("description"));
+            bean.setDisappear_at(object.getString("disappear_at"));
+            bean.setGender(object.getString("gender"));
+            bean.setId(object.getInt("id"));
+            bean.setNickname(object.getString("nickname"));
+            bean.setKind(object.getString("kind"));
+            bean.setIs_anonymous(object.getInt("is_anonymous"));
+            bean.setReward(object.getInt("reward"));
+            bean.setPhoto_thumbnail_src(object.getString("photo_thumbnail_src"));
+            list.add(bean);
+        }
+        return list;
     }
 
 //    //通过反射解析

@@ -37,28 +37,17 @@ public class HttpRequest {
                     connection.setRequestMethod("POST");
                     connection.setDoInput(true);
                     connection.setDoOutput(true);
-                    connection.setUseCaches(false);
                     connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
                     out = connection.getOutputStream();
                     out.write(parameter.getBytes());
                     out.flush();
 
                     if (connection.getResponseCode() == 200) {
-                        final byte[] in = (byte[]) ReadStream(connection.getInputStream());
+                        final byte[] in = ReadStream(connection.getInputStream());
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
                                 try {
-                                    if(api.equals(Config.Api_Question_List)){
-                                        Response data2 = new Response(in);
-                                        ArrayList<Object> list = new ArrayList<>();
-                                        for (int i = 0; i < JSONmanager.getArrayNumber(data2.getDate()); i++) {
-                                            Object dataBean;
-                                            dataBean= JSONmanager.getQuestionList(data2.getDate());
-                                            list.add(dataBean);
-                                        }
-                                        callback.onSuccess(list);
-                                    }
                                     Response data = new Response(in);
                                     callback.onSuccess(data);
                                 } catch (JSONException e) {
@@ -151,8 +140,6 @@ public class HttpRequest {
 
     public static interface Callback {
         void onSuccess(Response response) throws JSONException;
-
-        void onSuccess(ArrayList<?> response) throws JSONException;
 
         void onFiled(Exception e);
     }
