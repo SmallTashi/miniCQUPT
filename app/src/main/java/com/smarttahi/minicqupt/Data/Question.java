@@ -185,7 +185,7 @@ public class Question {
            public DataBean() {
            }
 
-           protected DataBean(Parcel in) {
+           DataBean(Parcel in) {
                this.title = in.readString();
                this.description = in.readString();
                this.kind = in.readString();

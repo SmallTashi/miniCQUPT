@@ -15,8 +15,15 @@ import com.smarttahi.minicqupt.R;
 import com.smarttahi.minicqupt.tools.ChangeUnit;
 import com.smarttahi.minicqupt.tools.MyApplication;
 
-public class MineFragment extends Fragment {
+import java.util.ArrayList;
 
+public class MineFragment extends Fragment {
+    private ArrayList<String> question_id;
+    private ArrayList<String> question_title;
+    private ArrayList<String> question_time;
+    private ArrayList<String> question_pay;
+    private ArrayList<String> question_kind;
+    private ArrayList<Integer> question_content;
 
     @Nullable
     @Override
@@ -27,6 +34,8 @@ public class MineFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
     }
 
 }

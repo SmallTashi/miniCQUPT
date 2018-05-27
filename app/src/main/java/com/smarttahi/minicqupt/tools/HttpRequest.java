@@ -140,7 +140,7 @@ public class HttpRequest {
                                         Response data2 = new Response(in);
                                         ArrayList<Question.DataBean> list = new ArrayList<>();
                                         for (int i = 0; i < JSONmanager.getArrayNumber(data2.getDate()); i++) {
-                                            Question.DataBean dataBean = new Question.DataBean();
+                                            Question.DataBean dataBean;
                                             dataBean= JSONmanager.getQuestionList(data2.getDate());
                                             list.add(dataBean);
                                         }

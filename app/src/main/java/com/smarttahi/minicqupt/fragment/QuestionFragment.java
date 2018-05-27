@@ -39,6 +39,8 @@ public class QuestionFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        question_item_title = view.findViewById(R.id.question_item_title);
+        question_item_title.setTextSize(ChangeUnit.pt2sp(MyApplication.getThisContext(),17));
 
 
 //        question_item_pay.findViewById(R.id.question_item_pay);

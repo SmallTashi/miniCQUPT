@@ -1,30 +1,27 @@
 package com.smarttahi.minicqupt.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.smarttahi.minicqupt.Data.Question;
 import com.smarttahi.minicqupt.R;
 import com.smarttahi.minicqupt.fragment.CourseFragment;
 import com.smarttahi.minicqupt.fragment.FindFragment;
 import com.smarttahi.minicqupt.fragment.MineFragment;
 import com.smarttahi.minicqupt.fragment.QuestionFragment;
-import com.smarttahi.minicqupt.tools.ChangeUnit;
 
 public class MainActivity extends BaseActivity {
-
-    RadioGroup bottom;
-    CourseFragment courseFragment;
-    QuestionFragment questionFragment;
-    MineFragment mineFragment;
-    FindFragment findFragment;
+    CourseFragment courseFragment = new CourseFragment();
+    QuestionFragment questionFragment = new QuestionFragment();
+    MineFragment mineFragment = new MineFragment();
+    FindFragment findFragment = new FindFragment();
+    RadioButton course;
+    RadioButton question;
+    RadioButton find;
+    RadioButton mine;
 
 
 
@@ -32,37 +29,41 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setTitle("本 周");
-        courseFragment = new CourseFragment();
-        questionFragment = new QuestionFragment();
-        mineFragment = new MineFragment();
-        findFragment = new FindFragment();
-        bottom = findViewById(R.id.bottom);
-        replaceFragment(courseFragment);
-//        bottom.setMinimumHeight(ChangeUnit.pt2dp(this,48));
+        course = new RadioButton(this);
+        mine = new RadioButton(this);
+        find = new RadioButton(this);
+        question = new RadioButton(this);
 
-        bottom.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        replaceFragment(courseFragment);
+        mine = (RadioButton) findViewById(R.id.bottom_mine);
+        find = (RadioButton)findViewById(R.id.bottom_find);
+        course = (RadioButton)findViewById(R.id.bottom_course_base);
+        question =(RadioButton) findViewById(R.id.bottom_question);
+        mine.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.bottom_course_base:
-                        //TODO code logic
-                        replaceFragment(courseFragment);
-                        break;
-                    case R.id.bottom_question:
-                        //TODO code logic
-                        replaceFragment(questionFragment);
-                        break;
-                    case R.id.bottom_find:
-                        //TODO code logic
-                        replaceFragment(findFragment);
-                        break;
-                    case R.id.bottom_mine:
-                        replaceFragment(mineFragment);
-                        break;
-                }
+            public void onClick(View v) {
+                replaceFragment(mineFragment);
             }
         });
+        question.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(questionFragment);
+            }
+        });
+        course.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(courseFragment);
+            }
+        });
+        find.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                replaceFragment(findFragment);
+            }
+        });
+//        bottom.setOnCheckedChangeListener(this);
     }
 
 
@@ -74,24 +75,4 @@ public class MainActivity extends BaseActivity {
         transaction.commit();
     }
 
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.bottom_course_base:
-//                //TODO code logic
-//                replaceFragment(courseFragment);
-//                break;
-//            case R.id.bottom_question:
-//                //TODO code logic
-//                replaceFragment(questionFragment);
-//                break;
-//            case R.id.bottom_find:
-//                //TODO code logic
-//                replaceFragment(findFragment);
-//                break;
-//            case R.id.bottom_mine:
-//                replaceFragment(mineFragment);
-//                break;
-//        }
-//    }
 }

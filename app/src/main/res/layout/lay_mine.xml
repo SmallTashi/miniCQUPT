@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="120dp"
         android:background="@drawable/mine_bg_me_top">
 
         <ImageView
@@ -21,25 +21,23 @@
             android:id="@+id/mine_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/main_desc"
-            android:layout_marginTop="70dp"
+            android:layout_centerVertical="true"
             android:background="@null"
             android:hint="@string/mine_name"
             android:inputType="text"
-            android:textStyle="bold"
             android:textColor="@color/white"
             android:textColorHighlight="@color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/main_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="70dp"
-            android:layout_marginStart="8dp"
-            android:layout_toEndOf="@+id/question_mine_head"
+            android:layout_alignBottom="@+id/question_mine_head"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
             android:background="@null"
             android:drawableEnd="@mipmap/mine_ic_me_edit"
             android:drawablePadding="8dp"

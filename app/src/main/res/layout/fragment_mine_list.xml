@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <include layout="@layout/bg_layout_top_title"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/top"
+
         />
+<include layout="@layout/lay_mine"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/head"
+    />
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_below="@+id/top"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         android:orientation="vertical"
         tools:listitem = "@layout/rv_fragment_mine_item"
@@ -20,4 +26,4 @@
         />
 
 
-</RelativeLayout>
+</LinearLayout>

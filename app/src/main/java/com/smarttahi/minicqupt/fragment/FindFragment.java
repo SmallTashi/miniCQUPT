@@ -12,6 +12,8 @@ import com.smarttahi.minicqupt.R;
 import com.smarttahi.minicqupt.activity.BaseActivity;
 
 public class FindFragment extends Fragment  {
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
