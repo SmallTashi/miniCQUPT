@@ -15,19 +15,25 @@ public class JSONmanager {
         return array.length();
     }
 
-    public static User checkUser(String data) throws JSONException {
-        JSONObject object = new JSONObject(data);
-        User user = new User();
-        user.setStuNum(object.getString("stuNum"));
-        user.setName(object.getString("name"));
-        user.setCollege(object.getString("college"));
-        user.setClassX(object.getString("class"));
-        user.setClassNum(object.getString("classNum"));
-        user.setGender(object.getString("gender"));
-        user.setMajor(object.getString("major"));
-        user.setGrade(object.getString("grade"));
-        user.setIdNum(object.getString("idNum"));
-        return user;
+    public static User checkUser(String data){
+        JSONObject object = null;
+        try {
+            object = new JSONObject(data);
+            User user = new User();
+            user.setStuNum(object.getString("stuNum"));
+            user.setName(object.getString("name"));
+            user.setCollege(object.getString("college"));
+            user.setClassX(object.getString("class"));
+            user.setClassNum(object.getString("classNum"));
+            user.setGender(object.getString("gender"));
+            user.setMajor(object.getString("major"));
+            user.setGrade(object.getString("grade"));
+            user.setIdNum(object.getString("idNum"));
+            return user;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+       return null;
     }
     public static User getUser(String data,User user) throws JSONException {
         JSONObject bean = new JSONObject(data);
@@ -42,12 +48,12 @@ public class JSONmanager {
         return user;
     }
 
-    public static ArrayList<Question.QuestionDataBean> getQuestionList(String data) throws JSONException {
+    public static ArrayList<Question> getQuestionList(String data) throws JSONException {
         JSONArray array = new JSONArray(data);
-        ArrayList<Question.QuestionDataBean> list = new ArrayList<>();
+        ArrayList<Question> list = new ArrayList<>();
         for (int i = 0; array.getJSONObject(i)!=null; i++) {
             JSONObject object =array.getJSONObject(i);
-            Question.QuestionDataBean bean = new Question.QuestionDataBean();
+            Question bean = new Question();
             bean.setAnswer_num(object.getInt("answer_num"));
             bean.setCreated_at(object.getString("created_at"));
             bean.setTags(object.getString("tags"));

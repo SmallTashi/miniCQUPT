@@ -12,11 +12,10 @@
     <string name="bottom_mine">我 的</string>
     <string name="course_name">课程名称</string>
     <string name="course_teacher">授课教师</string>
-    <string name="course_time">时间（星期一：1—4节
-        8：00下课）</string>
+    <string name="course_time">时间（</string>
     <string name="course_location">教室</string>
     <string name="course_type">类型</string>
-    <string name="course_week">周数（1—9周，11—13周）</string>
+    <string name="course_week">周数（）</string>
     <string name="question_item_char">#</string>
     <string name="question_all">全 部</string>
     <string name="question_study">学 习</string>
@@ -25,6 +24,11 @@
     <string name="picture">查看图片</string>
     <string name="mine_shop">积 分 商 城</string>
     <string name="about_me">与 我 相 关</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="course_dialog_time">时 间</string>
+    <string name="course_dialog_week">周 数</string>
 
 
 </resources>

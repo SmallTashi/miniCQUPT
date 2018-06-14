@@ -6,21 +6,15 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.RadioButton;
 
-import com.smarttahi.minicqupt.Data.User;
+import com.smarttahi.minicqupt.Data.Question;
 import com.smarttahi.minicqupt.R;
+import com.smarttahi.minicqupt.dummy.DummyContent;
 import com.smarttahi.minicqupt.fragment.CourseFragment;
 import com.smarttahi.minicqupt.fragment.FindFragment;
 import com.smarttahi.minicqupt.fragment.MineFragment;
 import com.smarttahi.minicqupt.fragment.QuestionFragment;
-import com.smarttahi.minicqupt.tools.Config;
-import com.smarttahi.minicqupt.tools.HttpRequest;
-import com.smarttahi.minicqupt.tools.JSONmanager;
-import com.smarttahi.minicqupt.tools.MyApplication;
-import com.smarttahi.minicqupt.tools.PackParameter;
 
-import org.json.JSONException;
-
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener,QuestionFragment.OnListFragmentInteractionListener {
     CourseFragment courseFragment = new CourseFragment();
     QuestionFragment questionFragment = new QuestionFragment();
     MineFragment mineFragment = new MineFragment();
@@ -40,45 +34,47 @@ public class MainActivity extends BaseActivity {
         mine = new RadioButton(this);
         find = new RadioButton(this);
         question = new RadioButton(this);
-
-        replaceFragment(questionFragment);
-        mine = (RadioButton) findViewById(R.id.bottom_mine);
-        find = (RadioButton)findViewById(R.id.bottom_find);
-        course = (RadioButton)findViewById(R.id.bottom_course_base);
-        question =(RadioButton) findViewById(R.id.bottom_question);
-        mine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(mineFragment);
-            }
-        });
-        question.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(questionFragment);
-            }
-        });
-        course.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(courseFragment);
-            }
-        });
-        find.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                replaceFragment(findFragment);
-            }
-        });
+        mine = findViewById(R.id.bottom_mine);
+        find = findViewById(R.id.bottom_find);
+        course = findViewById(R.id.bottom_course_base);
+        question = findViewById(R.id.bottom_question);
+        course.setOnClickListener(this);
+        find.setOnClickListener(this);
+        question.setOnClickListener(this);
+        mine.setOnClickListener(this);
+        switchFragment(questionFragment);
     }
 
 
 
-    private void replaceFragment(Fragment fragment) {
+    private void switchFragment(Fragment addFragment) {
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.main_fragment, fragment);
+        transaction.replace(R.id.main_fragment,addFragment);
         transaction.commit();
     }
 
+
+
+    @Override
+    public void onClick(View v) {
+        if (v==course){
+            switchFragment(this.courseFragment);
+        }
+        if(v==question){
+            switchFragment(this.questionFragment);
+
+        }
+        if(v==find){
+            switchFragment(this.findFragment);
+        }
+        if(v==mine){
+         switchFragment(this.mineFragment);
+        }
+    }
+
+    @Override
+    public void onListFragmentInteraction(Question item) {
+
+    }
 }

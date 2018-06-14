@@ -41,7 +41,7 @@ public class HttpRequest {
                     out = connection.getOutputStream();
                     out.write(parameter.getBytes());
                     out.flush();
-
+                    connection.connect();
                     if (connection.getResponseCode() == 200) {
                         final byte[] in = ReadStream(connection.getInputStream());
                         handler.post(new Runnable() {
@@ -101,7 +101,7 @@ public class HttpRequest {
     public static class Response {
         private int State;
         private String Info;
-        private String Date = null;
+        private String Date;
 
         Response(byte[] response) {
             String rawDate = new String(response);
@@ -138,7 +138,7 @@ public class HttpRequest {
         return null;
     }
 
-    public static interface Callback {
+    public interface Callback {
         void onSuccess(Response response) throws JSONException;
 
         void onFiled(Exception e);

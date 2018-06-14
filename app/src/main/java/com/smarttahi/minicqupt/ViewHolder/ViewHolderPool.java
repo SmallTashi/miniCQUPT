@@ -3,8 +3,8 @@ package com.smarttahi.minicqupt.ViewHolder;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.smarttahi.minicqupt.R;
@@ -14,7 +14,6 @@ import com.smarttahi.minicqupt.tools.MyApplication;
 public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView mine_item_content;
     public ImageView mine_item_icon;
-
 
 
     public TextView question_item_title;

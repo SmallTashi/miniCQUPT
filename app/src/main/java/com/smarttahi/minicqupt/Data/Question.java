@@ -5,204 +5,199 @@ import android.os.Parcelable;
 
 import java.util.List;
 
-public class Question {
+
+/**
+ * status : 200
+ * info : success
+ * data : [{"title":"又在写bug\\\\ue056","description":"bug是真的多","kind":"其他","tags":"PHP","reward":2,"answer_num":0,"disappear_at":"2019-02-27 01:11:20","created_at":"2018-05-19 17:35:14","is_anonymous":0,"id":52,"photo_thumbnail_src":"","nickname":"。","gender":"女"}]
+ * <p>
+ * title : 又在写bug\\ue056
+ * description : bug是真的多
+ * kind : 其他
+ * tags : PHP
+ * reward : 2
+ * answer_num : 0
+ * disappear_at : 2019-02-27 01:11:20
+ * created_at : 2018-05-19 17:35:14
+ * is_anonymous : 0
+ * id : 52
+ * photo_thumbnail_src :
+ * nickname : 。
+ * gender : 女
+ */
+public class Question implements Parcelable {
 
 
-       /**
-        * status : 200
-        * info : success
-        * data : [{"title":"又在写bug\\\\ue056","description":"bug是真的多","kind":"其他","tags":"PHP","reward":2,"answer_num":0,"disappear_at":"2019-02-27 01:11:20","created_at":"2018-05-19 17:35:14","is_anonymous":0,"id":52,"photo_thumbnail_src":"","nickname":"。","gender":"女"}]
-        */
+    public String title;
+    private String description;
+    private String kind;
+    private String tags;
+    private int reward;
+    private int answer_num;
+    private String disappear_at;
+    private String created_at;
+    private int is_anonymous;
+    public int id;
+    private String photo_thumbnail_src;
+    private String nickname;
+    private String gender;
 
-       public static class QuestionDataBean implements Parcelable {
+    public String getTitle() {
+        return title;
+    }
 
-           /**
-            * title : 又在写bug\\ue056
-            * description : bug是真的多
-            * kind : 其他
-            * tags : PHP
-            * reward : 2
-            * answer_num : 0
-            * disappear_at : 2019-02-27 01:11:20
-            * created_at : 2018-05-19 17:35:14
-            * is_anonymous : 0
-            * id : 52
-            * photo_thumbnail_src :
-            * nickname : 。
-            * gender : 女
-            */
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
+    public String getDescription() {
+        return description;
+    }
 
-           private String title;
-           private String description;
-           private String kind;
-           private String tags;
-           private int reward;
-           private int answer_num;
-           private String disappear_at;
-           private String created_at;
-           private int is_anonymous;
-           private int id;
-           private String photo_thumbnail_src;
-           private String nickname;
-           private String gender;
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-           public String getTitle() {
-               return title;
-           }
+    public String getKind() {
+        return kind;
+    }
 
-           public void setTitle(String title) {
-               this.title = title;
-           }
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
 
-           public String getDescription() {
-               return description;
-           }
+    public String getTags() {
+        return tags;
+    }
 
-           public void setDescription(String description) {
-               this.description = description;
-           }
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
 
-           public String getKind() {
-               return kind;
-           }
+    public int getReward() {
+        return reward;
+    }
 
-           public void setKind(String kind) {
-               this.kind = kind;
-           }
+    public void setReward(int reward) {
+        this.reward = reward;
+    }
 
-           public String getTags() {
-               return tags;
-           }
+    public int getAnswer_num() {
+        return answer_num;
+    }
 
-           public void setTags(String tags) {
-               this.tags = tags;
-           }
+    public void setAnswer_num(int answer_num) {
+        this.answer_num = answer_num;
+    }
 
-           public int getReward() {
-               return reward;
-           }
+    public String getDisappear_at() {
+        return disappear_at;
+    }
 
-           public void setReward(int reward) {
-               this.reward = reward;
-           }
+    public void setDisappear_at(String disappear_at) {
+        this.disappear_at = disappear_at;
+    }
 
-           public int getAnswer_num() {
-               return answer_num;
-           }
+    public String getCreated_at() {
+        return created_at;
+    }
 
-           public void setAnswer_num(int answer_num) {
-               this.answer_num = answer_num;
-           }
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
 
-           public String getDisappear_at() {
-               return disappear_at;
-           }
+    public int getIs_anonymous() {
+        return is_anonymous;
+    }
 
-           public void setDisappear_at(String disappear_at) {
-               this.disappear_at = disappear_at;
-           }
+    public void setIs_anonymous(int is_anonymous) {
+        this.is_anonymous = is_anonymous;
+    }
 
-           public String getCreated_at() {
-               return created_at;
-           }
+    public int getId() {
+        return id;
+    }
 
-           public void setCreated_at(String created_at) {
-               this.created_at = created_at;
-           }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-           public int getIs_anonymous() {
-               return is_anonymous;
-           }
+    public String getPhoto_thumbnail_src() {
+        return photo_thumbnail_src;
+    }
 
-           public void setIs_anonymous(int is_anonymous) {
-               this.is_anonymous = is_anonymous;
-           }
+    public void setPhoto_thumbnail_src(String photo_thumbnail_src) {
+        this.photo_thumbnail_src = photo_thumbnail_src;
+    }
 
-           public int getId() {
-               return id;
-           }
+    public String getNickname() {
+        return nickname;
+    }
 
-           public void setId(int id) {
-               this.id = id;
-           }
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
 
-           public String getPhoto_thumbnail_src() {
-               return photo_thumbnail_src;
-           }
+    public String getGender() {
+        return gender;
+    }
 
-           public void setPhoto_thumbnail_src(String photo_thumbnail_src) {
-               this.photo_thumbnail_src = photo_thumbnail_src;
-           }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-           public String getNickname() {
-               return nickname;
-           }
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
-           public void setNickname(String nickname) {
-               this.nickname = nickname;
-           }
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.title);
+        dest.writeString(this.description);
+        dest.writeString(this.kind);
+        dest.writeString(this.tags);
+        dest.writeInt(this.reward);
+        dest.writeInt(this.answer_num);
+        dest.writeString(this.disappear_at);
+        dest.writeString(this.created_at);
+        dest.writeInt(this.is_anonymous);
+        dest.writeInt(this.id);
+        dest.writeString(this.photo_thumbnail_src);
+        dest.writeString(this.nickname);
+        dest.writeString(this.gender);
+    }
 
-           public String getGender() {
-               return gender;
-           }
+    public Question() {
+    }
 
-           public void setGender(String gender) {
-               this.gender = gender;
-           }
+    private Question(Parcel in) {
+        this.title = in.readString();
+        this.description = in.readString();
+        this.kind = in.readString();
+        this.tags = in.readString();
+        this.reward = in.readInt();
+        this.answer_num = in.readInt();
+        this.disappear_at = in.readString();
+        this.created_at = in.readString();
+        this.is_anonymous = in.readInt();
+        this.id = in.readInt();
+        this.photo_thumbnail_src = in.readString();
+        this.nickname = in.readString();
+        this.gender = in.readString();
+    }
 
-           @Override
-           public int describeContents() {
-               return 0;
-           }
+    public static final Parcelable.Creator<Question> CREATOR = new Parcelable.Creator<Question>() {
+        @Override
+        public Question createFromParcel(Parcel source) {
+            return new Question(source);
+        }
 
-           @Override
-           public void writeToParcel(Parcel dest, int flags) {
-               dest.writeString(this.title);
-               dest.writeString(this.description);
-               dest.writeString(this.kind);
-               dest.writeString(this.tags);
-               dest.writeInt(this.reward);
-               dest.writeInt(this.answer_num);
-               dest.writeString(this.disappear_at);
-               dest.writeString(this.created_at);
-               dest.writeInt(this.is_anonymous);
-               dest.writeInt(this.id);
-               dest.writeString(this.photo_thumbnail_src);
-               dest.writeString(this.nickname);
-               dest.writeString(this.gender);
-           }
-
-           public QuestionDataBean() {
-           }
-
-           QuestionDataBean(Parcel in) {
-               this.title = in.readString();
-               this.description = in.readString();
-               this.kind = in.readString();
-               this.tags = in.readString();
-               this.reward = in.readInt();
-               this.answer_num = in.readInt();
-               this.disappear_at = in.readString();
-               this.created_at = in.readString();
-               this.is_anonymous = in.readInt();
-               this.id = in.readInt();
-               this.photo_thumbnail_src = in.readString();
-               this.nickname = in.readString();
-               this.gender = in.readString();
-           }
-
-           public static final Parcelable.Creator<QuestionDataBean> CREATOR = new Parcelable.Creator<QuestionDataBean>() {
-               @Override
-               public QuestionDataBean createFromParcel(Parcel source) {
-                   return new QuestionDataBean(source);
-               }
-
-               @Override
-               public QuestionDataBean[] newArray(int size) {
-                   return new QuestionDataBean[size];
-               }
-           };
-       }
-
+        @Override
+        public Question[] newArray(int size) {
+            return new Question[size];
+        }
+    };
 }
+
+
