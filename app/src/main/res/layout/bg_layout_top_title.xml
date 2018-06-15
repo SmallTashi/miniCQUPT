@@ -1,62 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="wrap_content">
+
     <RelativeLayout
-        android:id="@+id/top_title"
-        android:gravity="bottom"
-        android:background="@drawable/bg_login"
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
-        android:layout_height="65dp">
+        android:layout_height="55dp"
+        android:background="@drawable/bg_login"
+        android:gravity="bottom">
+
         <TextView
-            android:layout_marginBottom="4dp"
-            android:id="@+id/title"
-            tools:text="Title"
-            android:textColor="@color/mine_text"
+            android:id="@+id/top_title_center_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
             android:gravity="center"
+            android:textColor="@color/mine_text"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageButton
-            android:layout_marginBottom="4dp"
+            tools:text="Title" />
 
-            android:id="@+id/top_title_left"
+        <ImageButton
+            android:id="@+id/top_title_left_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="4dp"
             android:layout_marginStart="17dp"
-            android:padding="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:src="@mipmap/course_back"
             android:background="@null"
-            android:layout_centerVertical="true"
-            tools:ignore="ContentDescription" />
-        <ImageButton
-            android:layout_marginBottom="4dp"
+            android:padding="5dp"
+            tools:ignore="ContentDescription"
+            tools:src="@mipmap/course_back" />
 
-            android:id="@+id/top_title_right"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="17dp"
-            android:padding="5dp"
+        <ImageButton
+            android:id="@+id/top_title_right_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:src="@mipmap/course_back"
-            android:background="@null"
-            android:layout_centerVertical="true"
-            tools:ignore="ContentDescription" />
-        <TextView
-            android:layout_marginBottom="4dp"
-            android:id="@+id/top_title_right_text"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="4dp"
             android:layout_marginEnd="17dp"
+            android:background="@null"
+            android:padding="5dp"
+            tools:ignore="ContentDescription"
+            tools:src="@mipmap/course_back" />
+
+        <TextView
+            android:id="@+id/top_title_right_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="17dp"
+            android:textColor="@color/mine_text"
             android:textSize="18sp"
             tools:text="登 陆"
-            android:textColor="@color/mine_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
 
-           />
+            />
 
     </RelativeLayout>
 

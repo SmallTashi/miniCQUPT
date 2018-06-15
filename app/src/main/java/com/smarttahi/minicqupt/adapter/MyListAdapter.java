@@ -59,7 +59,7 @@ public class MyListAdapter extends RecyclerView.Adapter<ViewHolderPool> {
         }
 
 
-        return new ViewHolderPool(view,type);
+        return new ViewHolderPool(view);
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPool holder, int position) {

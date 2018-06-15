@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">@null</color>
-    <color name="colorAccent">#FF4081</color>
     <color name="colorEndLogin">#798DFA</color>
     <color name="colorStartLogin">#58B1FC</color>
     <color name="mine_text">#FEFEFE</color>
@@ -12,4 +9,9 @@
     <color name="answer_comment">#666666</color>
     <color name="question_kind">#7097FB</color>
     <color name="adopt_text">#777777</color>
+    <color name="colorPrimary">#E2E2E2</color>
+    <color name="colorPrimaryDark">#C9D6FF</color>
+    <color name="colorAccent">#fffffb</color>
+    <color name="colorBackground">#fffffb</color>
+    <color name="White">#ffffff</color>
 </resources>

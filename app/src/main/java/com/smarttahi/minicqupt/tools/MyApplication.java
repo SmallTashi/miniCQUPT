@@ -11,9 +11,10 @@ import com.smarttahi.minicqupt.Data.User;
 public class MyApplication extends Application {
     public static final int ANSWER_LIST = 0;
     public static final int QUESTION_LIST = 1;
-    public static final int MINE_LIST = 2;
+//    public static final int MINE_LIST = 2;
     public static final int ANSWER_DETAIL = 3;
     public static Boolean IS_LOGIN = false;
+
 
     public static User user = null;
     @SuppressLint("StaticFieldLeak")

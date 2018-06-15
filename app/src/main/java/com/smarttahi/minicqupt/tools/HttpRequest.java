@@ -55,7 +55,7 @@ public class HttpRequest {
                                     callback.onFiled(e);
                                 }
                                 //使用回调，返回请求得到的数据
-                            }
+                             }
                         });
                     } else {
                         handler.post(new Runnable() {

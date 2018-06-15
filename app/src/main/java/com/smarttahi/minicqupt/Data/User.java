@@ -17,15 +17,15 @@ public class User implements Parcelable {
      * idNum : xxxxx
      */
 
-    private String stuNum;
-    private String name;
-    private String college;
-    private String classX;
-    private String classNum;
-    private String gender;
-    private String major;
-    private String grade;
-    private String idNum;
+    private String stuNum="";
+    private String name="";
+    private String college="";
+    private String classX="";
+    private String classNum="";
+    private String gender="";
+    private String major="";
+    private String grade="";
+    private String idNum="";
     /**
      * id : 2828
      * introduction : An Android Developer
@@ -37,13 +37,13 @@ public class User implements Parcelable {
      * qq : 14325xxxxx
      */
     private int id;
-    private String introduction;
-    private String nickname;
-    private String photo_thumbnail_src;
-    private String photo_src;
-    private String updated_time;
-    private String phone;
-    private String qq;
+    private String introduction="";
+    private String nickname="";
+    private String photo_thumbnail_src="";
+    private String photo_src="";
+    private String updated_time="";
+    private String phone="";
+    private String qq="";
 
     public String getStuNum() {
         return stuNum;

@@ -1,8 +1,11 @@
 package com.smarttahi.minicqupt;
 
+import android.content.Intent;
 import android.util.Log;
 
 import com.smarttahi.minicqupt.Data.User;
+import com.smarttahi.minicqupt.activity.LoginActivity;
+import com.smarttahi.minicqupt.activity.TestActivity;
 import com.smarttahi.minicqupt.tools.JSONmanager;
 import com.smarttahi.minicqupt.tools.MyApplication;
 
@@ -21,12 +24,11 @@ public class MvpPresenter implements Contract.Presenter {
 
          mvpCallBack = new Contract.MvpCallBack() {
             @Override
-            public void onSuccess(String data) {
-
-               User user= JSONmanager.checkUser(data);
+            public void onSuccess(String s,String data) {
+               User user= JSONmanager.checkUser(s,data);
                if(user!=null){
+                   Log.d("show",data);
                    mvpView.addToast(data);
-                   Log.d("Data",data);
                    mvpView.addToast("Success Login! please waite a minute");
                    MyApplication.setUser(user);
                    mvpView.showHome();
@@ -44,6 +46,16 @@ public class MvpPresenter implements Contract.Presenter {
             }
         };
 
+    }
+
+    @Override
+    public void disagree() {
+        exitLogin();
+    }
+
+    @Override
+    public void agree() {
+        mvpView.showHome();
     }
 
     @Override
@@ -66,7 +78,6 @@ public class MvpPresenter implements Contract.Presenter {
         if(!MyApplication.IS_LOGIN){
             mvpView.addToast("No login information, please input your login information");
         }else {
-            mvpView.addToast("Login, please wait a moment");
             mvpView.showHome();
         }
     }

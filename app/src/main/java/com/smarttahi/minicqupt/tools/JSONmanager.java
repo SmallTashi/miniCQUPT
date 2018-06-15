@@ -15,10 +15,10 @@ public class JSONmanager {
         return array.length();
     }
 
-    public static User checkUser(String data){
-        JSONObject object = null;
+    public static User checkUser(String s,String data){
+        JSONObject object;
         try {
-            object = new JSONObject(data);
+            object = new JSONObject(s);
             User user = new User();
             user.setStuNum(object.getString("stuNum"));
             user.setName(object.getString("name"));
@@ -29,23 +29,20 @@ public class JSONmanager {
             user.setMajor(object.getString("major"));
             user.setGrade(object.getString("grade"));
             user.setIdNum(object.getString("idNum"));
+            JSONObject bean = new JSONObject(data);
+            user.setId(bean.getInt("id"));
+            user.setIntroduction(bean.getString("introduction"));
+            user.setNickname(bean.getString("nickname"));
+            user.setPhoto_thumbnail_src(bean.getString("photo_thumbnail_src"));
+            user.setPhoto_src(bean.getString("photo_src"));
+            user.setUpdated_time(bean.getString("updated_time"));
+            user.setPhone(bean.getString("phone"));
+            user.setQq(bean.getString("qq"));
             return user;
         } catch (JSONException e) {
             e.printStackTrace();
         }
-       return null;
-    }
-    public static User getUser(String data,User user) throws JSONException {
-        JSONObject bean = new JSONObject(data);
-        user.setId(bean.getInt("id"));
-        user.setIntroduction(bean.getString("introduce"));
-        user.setNickname(bean.getString("nickname"));
-        user.setPhoto_thumbnail_src(bean.getString("photo_thumbnail_src"));
-        user.setPhoto_src(bean.getString("photo_src"));
-        user.setUpdated_time(bean.getString("updated_time"));
-        user.setPhone(bean.getString("phone"));
-        user.setQq(bean.getString("qq"));
-        return user;
+        return null;
     }
 
     public static ArrayList<Question> getQuestionList(String data) throws JSONException {

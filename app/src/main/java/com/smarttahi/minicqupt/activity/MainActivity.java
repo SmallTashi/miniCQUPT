@@ -1,11 +1,14 @@
 package com.smarttahi.minicqupt.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.RadioButton;
 
+import com.smarttahi.minicqupt.Contract;
 import com.smarttahi.minicqupt.Data.Question;
 import com.smarttahi.minicqupt.R;
 import com.smarttahi.minicqupt.dummy.DummyContent;
@@ -14,7 +17,7 @@ import com.smarttahi.minicqupt.fragment.FindFragment;
 import com.smarttahi.minicqupt.fragment.MineFragment;
 import com.smarttahi.minicqupt.fragment.QuestionFragment;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener,QuestionFragment.OnListFragmentInteractionListener {
+public class MainActivity extends BaseActivity implements Contract.MvpView,View.OnClickListener {
     CourseFragment courseFragment = new CourseFragment();
     QuestionFragment questionFragment = new QuestionFragment();
     MineFragment mineFragment = new MineFragment();
@@ -23,8 +26,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,Q
     RadioButton question;
     RadioButton find;
     RadioButton mine;
-
-
+    Contract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,Q
         find.setOnClickListener(this);
         question.setOnClickListener(this);
         mine.setOnClickListener(this);
-        switchFragment(questionFragment);
+        switchFragment(mineFragment);
     }
 
 
@@ -73,8 +75,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener,Q
         }
     }
 
+
+
     @Override
-    public void onListFragmentInteraction(Question item) {
+    public void addToast(String s) {
 
     }
+
+    @Override
+    public void showHome() {
+
+    }
+
+
+
 }

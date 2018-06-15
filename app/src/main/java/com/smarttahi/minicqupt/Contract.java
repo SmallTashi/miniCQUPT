@@ -9,6 +9,9 @@ public interface Contract {
     }
 
     interface Presenter {
+        void disagree();
+        void agree();
+
         void exitLogin();
 
         void login(String name, String paw);
@@ -17,7 +20,7 @@ public interface Contract {
     }
 
     interface MvpCallBack {
-        void onSuccess(String data);
+        void onSuccess(String s,String data);
 
         void onFailed();
 

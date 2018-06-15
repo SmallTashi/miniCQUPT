@@ -11,6 +11,8 @@ import com.smarttahi.minicqupt.R;
 import com.smarttahi.minicqupt.tools.ChangeUnit;
 import com.smarttahi.minicqupt.tools.MyApplication;
 
+import java.util.ArrayList;
+
 public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView mine_item_content;
     public ImageView mine_item_icon;
@@ -19,25 +21,15 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
     public TextView question_item_title;
     public TextView question_item_kind;
     public TextView question_item_detail;
-//    public LinearLayout question_item_top;
-//    public ImageView question_mine_head;
     public TextView question_idName;
     public TextView question_time_least;
     public TextView question_item_pay;
 
-    public ViewHolderPool(View itemView, int Type) {
+    public TextView content;
+    public ImageView imageView_normal;
+    public ViewHolderPool(View itemView) {
         super(itemView);
-        itemView.setOnClickListener(this);
-        if (Type == MyApplication.QUESTION_LIST) {
-            initQuestionItem(itemView);
-        } else if (Type == MyApplication.ANSWER_LIST) {
-            initAnswerItem(itemView);
-        }else if(Type == MyApplication.ANSWER_DETAIL){
-            initDetailAnswer(itemView);
-        }
-        else {
-            initMineItem(itemView);
-        }
+        initNormal(itemView);
     }
 
     private void initDetailAnswer(View itemView) {
@@ -63,6 +55,14 @@ public class ViewHolderPool extends RecyclerView.ViewHolder implements View.OnCl
     private void initMineItem(View itemView) {
         mine_item_icon = itemView.findViewById(R.id.mine_item_icon);
         mine_item_content = itemView.findViewById(R.id.mine_item_content);
+    }
+
+    void initNormal(View itemView) {
+        CardView cardView = itemView.findViewById(R.id.item_view);
+        cardView.setCardElevation(5);
+        cardView.setCardBackgroundColor(itemView.getResources().getColor(R.color.colorAccent));
+        imageView_normal = itemView.findViewById(R.id.image);
+        content = itemView.findViewById(R.id.text);
     }
 
     @Override
